@@ -3,8 +3,88 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
 
 * {
+    text-decoration: none; /*tira todas as decorações padrões */
+    list-style: none; /*retira os bullets do list item*/
     padding: 0;
     margin: 0;
+}
+
+:root {
+    --font-primary:"Baloo+Da+2",sans-serif;
+    --font-action:"Mulish",sans-serif;
+    --font-secundaria:"Josefin Slab",sans-serif:
+}
+.icone {
+    width: 2rem;
+    height: 2rem;
+    position: fixed; /*Fixed para não deixar o icone sair da barra de rolagem*/
+    z-index: 999; /*z index serve para determina a profundidade do elemento*/
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: all 1.2s;
+}
+
+.show-menu .icone {
+    right: 16rem;
+}
+
+.line {
+    width: 100%; /*Mesmo largura do espaço do elemento pai (Icone)*/
+    background-color: #fff;
+    height: .1rem;
+    box-shadow: 0.1rem 0.1rem 1px black;
+    transition: transform 1s;
+}
+
+.show-menu #line1 {
+    box-shadow: none;
+    background-color: #0F2027;
+    transform: rotate(45deg) translate(5px , 4px);
+}
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden; 
+}
+
+.show-menu #line3 {
+    box-shadow: none;
+    background-color: #0F2027;
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+.icone span {
+    position: absolute;
+    left: 3rem;
+    top: -1.5px;
+    background-color: darkmagenta;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 6rem;
+    color: #fff;
+    font-family: var(--font-action);
+    opacity: 0;
+    transition: all 2s;
+}
+
+.icone span::before {
+    content: "";
+    position: absolute;
+    border-right: 0.5rem solid darkmagenta;
+    border-top: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    left: -1rem;
+}
+
+.show-menu .icone:hover span{
+    opacity: 1;
 }
 
 header {
@@ -38,7 +118,7 @@ header {
 .banner h1 {
     color: white;
     font-size: 3rem;
-    font-family: "Baloo+Da+2",sans-serif;
+    font-family: var(--font-primary);
     font-weight: 400;
     text-shadow: 0.3rem 0.4rem 2px rgba(0,0,0,0.4);
     line-height: 3.5rem;
@@ -51,7 +131,7 @@ header {
 .banner p {
     color: white;
     font-size: 2rem;
-    font-family: "Josefin Slab",sans-serif;
+    font-family: var(--font-secundaria);
     text-shadow: 0.3rem 0.4rem 2px rgba(0,0,0,0.4);
     line-height: 3.5rem;
     margin-bottom: 2rem;
@@ -61,7 +141,7 @@ header {
 }
 
 .banner button {
-    font-family: "Mulish",sans-serif;
+    font-family: var(--font-action);
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -97,5 +177,75 @@ header {
     100%{
         transform: translateY(0) rotateY(0);
         opacity: 1;
+    }
+}
+
+.sidebar {
+    width: 20rem;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 1s;
+}
+
+.show-menu .sidebar{
+    right: 0;
+}
+
+
+.menu {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.menu-item {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.menu-link {
+    color: #0F2027;
+    font-size: 2rem;
+    font-family: var(--font-action);
+    transition: color 1s;
+}
+
+.menu-link:hover {
+    color: darkmagenta;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-media i {
+    color: #0F2027;
+    height: 2.5rem ;
+    width: 2.5rem;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.social-media a:hover {
+    animation: icone-zoom 2s forwards;
+}
+
+@keyframes icone-zoom{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.3);
     }
 }
