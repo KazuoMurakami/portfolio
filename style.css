@@ -6,7 +6,7 @@
     text-decoration: none; /*tira todas as decorações padrões */
     list-style: none; /*retira os bullets do list item*/
     padding: 0;
-    margin: 0;
+    margin: 0; 
 }
 
 :root {
@@ -14,6 +14,7 @@
     --font-action:"Mulish",sans-serif;
     --font-secundaria:"Josefin Slab",sans-serif:
 }
+
 .icone {
     width: 2rem;
     height: 2rem;
@@ -181,6 +182,7 @@ header {
 }
 
 .sidebar {
+    z-index: 99;
     width: 20rem;
     height: 100vh;
     background-color: rgb(255, 255, 255);
@@ -301,7 +303,6 @@ header {
     display: flex;
     align-items: center;
     color: #4b4b4b;
-
 }
 
 .conhecimento-header i {
@@ -316,6 +317,7 @@ header {
 
 .conhecimento-text {
     font-family: var(--font-secundaria);
+    font-size: 20px;
     margin-top: 1rem;
 }
 
@@ -329,4 +331,136 @@ header {
     object-fit: cover;
     width: 100%;
 
+}
+
+/*Sessão Projetos abaixo*/
+
+.projetos {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 20rem;
+    height: 30rem;
+    position: relative;
+}
+
+.card-img-wrapper {
+    width: 100%;
+    border-radius: 0.5rem;
+    height: 100%;
+    background-color: #262626;
+}
+
+.card-img-wrapper img {
+    border-radius: 0.5rem;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+}
+
+.card:hover img{
+    opacity: 1;
+}
+.card-info {
+    cursor: default;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 2rem;
+    transition: all 1s;
+}
+
+.card-info h2 {
+    font-family: var(--font-primary) sans-serif;
+    color: #eee;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.card-info h3 {
+    font-family: var(--font-secundaria) sans-serif;
+    font-weight: bolder;
+    color: #ff4081;
+    text-transform: uppercase;
+}
+
+.sub-titulo {
+    margin-bottom: 1rem;
+}
+
+.card-info p {
+    font-family: var(--font-secundaria) sans-serif;
+    color: #eee;
+    width: 80%;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.card-info button {
+    cursor: pointer;
+    font-family: var(--font-action);
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card:hover .card-info {
+    opacity: 1;
+    bottom: 2rem;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+
+/*Rodape*/
+
+.rodape {
+    background-color: #f5f5f5;
+    border-top: solid 5px darkmagenta;
+    margin-top: 5rem;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+}
+
+.rodape-redes {
+    display: flex;
+    margin-top: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    justify-content: space-evenly;
+}
+
+.rodape-redes a {
+    font-size: 2rem;
+    color: #0F2027;
+}
+
+.rodape-text {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--font-primary) sans-serif;
+}
+
+.rodape-container {
+    padding-left: 35%;
+    padding-right: 35%;
+}
+
+.Contato {
+    font-size: 0.7rem;
+    margin: 1rem 0 1rem 0;
 }
