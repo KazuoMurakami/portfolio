@@ -375,6 +375,11 @@ header {
     transition: all 1s;
 }
 
+.card-info a {
+    color: #ffffff;
+    font-weight: 700;
+}
+
 .card-info h2 {
     font-family: var(--font-primary) sans-serif;
     color: #eee;
